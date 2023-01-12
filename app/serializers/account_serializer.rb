@@ -1,5 +1,5 @@
 class AccountSerializer < ActiveModel::Serializer
-  attributes :id, :type
+  attributes :id, :name
 
   has_many :clients
   has_many :users, through: :clients
