@@ -5,8 +5,14 @@ import Login from './Login';
 import Checking from './Checking';
 import './App.css';
 import {Route, Switch} from 'react-router-dom'
+import { useSelector, useDispatch} from 'react-redux'
+import { fetchDataSuccess } from './features/meSlice';
 
 function App() {
+
+  
+
+
   return (
     <div className="App">
       <header className="App-header">
