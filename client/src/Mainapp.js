@@ -1,17 +1,12 @@
 import React from 'react';
 import NavBar from './NavBar';
 import Enroll from './Enroll';
-import Login from './Login';
+import Login from './features/Login/Login';
 import Checking from './Checking';
 import './App.css';
 import {Route, Switch} from 'react-router-dom'
-import { useSelector, useDispatch} from 'react-redux'
-import { fetchDataSuccess } from './features/meSlice';
 
-function App() {
-
-  
-
+function MainApp() {
 
   return (
     <div className="App">

@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import mereducer from '/features/meSlice/'
+import {loginReducer} from './loginSlice';
 
-export default configureStore({
-    reducer: {
-        me: mereducer
-    }
-})
+    export  const store = configureStore({
+        reducer: {
+            login: loginReducer,
+        }
+    })
