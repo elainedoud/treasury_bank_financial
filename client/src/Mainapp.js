@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './NavBar';
 import Enroll from './Enroll';
-import Login from './features/Login/Login';
+import Login from './features/login/Login';
 import Checking from './Checking';
 import './App.css';
 import {Route, Switch} from 'react-router-dom'
@@ -29,4 +29,4 @@ function MainApp() {
   );
 }
 
-export default App;
+export default MainApp;

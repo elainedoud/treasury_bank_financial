@@ -13,6 +13,7 @@ const Login = () => {
 
     const handleLogin = async(e) => {
         e.preventDefault();
+        try {
             const response = await fetch("/login", {
                 method: "POST",
                 headers: {
@@ -20,14 +21,13 @@ const Login = () => {
                 },
                 body: JSON.stringify({fetchLogins}),
             });
-            then((response) => response.json())
-            .then( data => {
+            const data = await response.json();
                 if (data.id){
                     allLoginData(data)
                 } else if (data.errors){
                     setError(errors)
                 }
-    })}
+    }};
 
     const handleChangeUsername = e => setName(e.target.value)
     const handleChangePassword = e => setPassword(e.target.value)

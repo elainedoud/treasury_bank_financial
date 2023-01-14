@@ -26,4 +26,4 @@ export const loginSlice = createSlice({
 
 export const allLoginData = (state) => state.logins.logins
  
-export default loginSlice.reducer
+export default loginSlice.reducer;
