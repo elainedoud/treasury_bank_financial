@@ -14,14 +14,16 @@ function MainApp() {
         <p>Treasury Bank Financial</p>
       </header>
       <Switch>
-      <NavBar />
-      <Route path="/enroll">
+      <Route exact path="/">
+        <NavBar />
+      </Route>
+      <Route exact path="/enroll">
           <Enroll />
       </Route>
-      <Route path="/login">
+      <Route exact path="/login">
         <Login />
       </Route>
-      <Route path="/checking">
+      <Route exact path="/checking">
         <Checking />
       </Route>
     </Switch>
