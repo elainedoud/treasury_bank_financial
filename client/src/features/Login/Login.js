@@ -57,7 +57,7 @@ function Login(){
 
     return (
         <div>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleLogin} user={user} key={user.id}>
             <p>Login:</p>
             <input 
             type="text"

@@ -2,11 +2,11 @@ import React from 'react';
 import NavBar from './NavBar';
 import Enroll from './Enroll';
 import Login from './features/login/Login';
-import Checking from './Checking';
+import Checking from './features/checking/Checking';
 import './App.css';
 import {Route, Switch} from 'react-router-dom'
 
-function MainApp() {
+function MainApp({user}) {
 
   return (
     <div className="App">
@@ -24,7 +24,7 @@ function MainApp() {
         <Login />
       </Route>
       <Route exact path="/checking">
-        <Checking />
+        <Checking user={user}/>
       </Route>
     </Switch>
     </div>
