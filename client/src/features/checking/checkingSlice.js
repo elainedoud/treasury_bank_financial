@@ -7,8 +7,9 @@ const initialState = {
 }
 
 export const fetchAccounts = createAsyncThunk('accounts/fetchAccounts', async() =>{
-    let response = await axios.get("/account")
-    return response.payload.account
+    const response = await axios.get("/account")
+    const account = await response.json();
+    return account;
 })
 
 const checkingSlice = createSlice({
