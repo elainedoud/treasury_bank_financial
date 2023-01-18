@@ -6,7 +6,7 @@ class AccountsController < ApplicationController
     end
 
     def show
-        account = Account.find(params[:id])
+        account = Account.find_by(user: account_user)
         render json: account
     end
 
@@ -17,7 +17,7 @@ class AccountsController < ApplicationController
     end
 
     def account_user
-        user = User.find_by(params[:id])
+        user = User.find_by(params[:name])
     end
 
     #comments

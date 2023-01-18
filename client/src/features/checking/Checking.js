@@ -2,7 +2,11 @@ import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchAccounts, allCheckingData} from './checkingSlice'
 
-function Checking (){
+let check_url_account
+
+function Checking ({user}){
+
+    check_url_account = `/account/${user}`
 
     const dispatch = useDispatch()
     const accounts = useSelector(state => state.accounts.accounts)
@@ -10,19 +14,13 @@ function Checking (){
     useEffect(() =>{
         dispatch(fetchAccounts());
     }, [dispatch])
-    
-    
-    /*const accounts = Object.keys(check_accounts).map(key => {
-        return check_accounts[key]
-    })*/
-
-             
+                 
     return (
         <div>
             {accounts.map(account =>{
                 return (
-                    <ul>
-                    <p>key={account.id} {account.transaction.date}</p>
+                    <ul key={user.id} user={user}>
+                    <p>{account.transaction.date}</p>
                     <p>{account.transaction.description}</p>
                     <p>{account.transaction.dollar_amount}</p>
                     </ul> )
@@ -30,5 +28,7 @@ function Checking (){
         </div>
     )
 }
+
+export const CHECK_URL = check_url_account
 
 export default Checking

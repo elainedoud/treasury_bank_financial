@@ -1,30 +1,36 @@
 import React, {useState, useEffect} from 'react';
 import {allLoginData} from './loginSlice';
 
-function Login(){ 
+function Login({nowUser, setNowUser}){ 
 
     const [user, setUser] = useState({})
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setError] = useState([])
     const [loggedIn, setLoggedIn] = useState(true)
+    
 
-    useEffect(() => {
+      useEffect(() => {
         fetch("/me")
-        .then (res =>{
+        .then(res => {
           if (res.ok) {
-            res.json()
-            .then (user => {
-              setUser (user)
+            res.json().then(user => {
+              setUser(user)
               setLoggedIn(true)
-            })
-          } else {
-            setUser({})
-            setLoggedIn(false)
+            }
+        )} else {
+            setUser({});
+            setLoggedIn(false);
           }
         })
-        }, [])
+        }, []);
 
+        function handleUser(e){
+          e.preventDefault()
+          this.props.setNowUser(user)
+        return nowUser
+        }
+      
     const handleLogin = async(e) => {
         e.preventDefault();
         const response = await fetch("/login", {
@@ -57,14 +63,19 @@ function Login(){
 
     return (
         <div>
-        <form onSubmit={handleLogin} user={user} key={user.id}>
+        <form onSubmit={(e) => {
+          handleLogin(e);
+          handleUser(e);
+        }} nowuser={nowUser} setnowuser={setNowUser}>
             <p>Login:</p>
             <input 
             type="text"
             onChange = {handleChangeUsername}
             value = {name}
             placeholder = 'name' 
-            className="login"/>
+            className="login"
+            user={user}
+            />
             <input 
             type="text" 
             onChange = {handleChangePassword}

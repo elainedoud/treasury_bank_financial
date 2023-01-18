@@ -1,12 +1,19 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import NavBar from './NavBar';
 import Enroll from './Enroll';
 import Login from './features/login/Login';
 import Checking from './features/checking/Checking';
 import './App.css';
 import {Route, Switch} from 'react-router-dom'
+/*import {useSelector} from 'react-redux'*/
 
-function MainApp({user}) {
+function MainApp() {
+
+  const [nowUser, setNowUser] = useState(null) 
+
+  console.log(nowUser)
+  /*const user = useSelector(state => state.login.user)*/
+
 
   return (
     <div className="App">
@@ -21,10 +28,10 @@ function MainApp({user}) {
           <Enroll />
       </Route>
       <Route exact path="/login">
-        <Login />
+        <Login nowuser={nowUser} setnowuser={setNowUser}/>
       </Route>
       <Route exact path="/checking">
-        <Checking user={user}/>
+        <Checking />
       </Route>
     </Switch>
     </div>
