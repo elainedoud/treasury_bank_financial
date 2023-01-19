@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {allLoginData} from './loginSlice';
 
-function Login({nowUser, setNowUser}){ 
+function Login({nowuser, setnowuser, ...props}){ 
 
     const [user, setUser] = useState({})
     const [name, setName] = useState("");
@@ -27,8 +27,8 @@ function Login({nowUser, setNowUser}){
 
         function handleUser(e){
           e.preventDefault()
-          this.props.setNowUser(user)
-        return nowUser
+          setnowuser(user)
+        return nowuser
         }
       
     const handleLogin = async(e) => {
@@ -65,8 +65,8 @@ function Login({nowUser, setNowUser}){
         <div>
         <form onSubmit={(e) => {
           handleLogin(e);
-          handleUser(e);
-        }} nowuser={nowUser} setnowuser={setNowUser}>
+          handleUser(e, props);
+        }} nowuser={nowuser}>
             <p>Login:</p>
             <input 
             type="text"

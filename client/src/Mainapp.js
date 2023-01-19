@@ -9,9 +9,9 @@ import {Route, Switch} from 'react-router-dom'
 
 function MainApp() {
 
-  const [nowUser, setNowUser] = useState(null) 
+  const [nowuser, setnowuser] = useState("") 
 
-  console.log(nowUser)
+  console.log(nowuser)
   /*const user = useSelector(state => state.login.user)*/
 
 
@@ -28,7 +28,7 @@ function MainApp() {
           <Enroll />
       </Route>
       <Route exact path="/login">
-        <Login nowuser={nowUser} setnowuser={setNowUser}/>
+        <Login nowuser={nowuser} setnowuser={setnowuser}/>
       </Route>
       <Route exact path="/checking">
         <Checking />
