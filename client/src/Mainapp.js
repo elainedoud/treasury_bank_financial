@@ -1,19 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import NavBar from './NavBar';
 import Enroll from './Enroll';
 import Login from './features/login/Login';
 import Checking from './features/checking/Checking';
 import './App.css';
 import {Route, Switch} from 'react-router-dom'
-/*import {useSelector} from 'react-redux'*/
 
 function MainApp() {
 
   const [nowuser, setnowuser] = useState("") 
-
-  console.log(nowuser)
-  /*const user = useSelector(state => state.login.user)*/
-
 
   return (
     <div className="App">
@@ -21,9 +16,8 @@ function MainApp() {
         <p>Treasury Bank Financial</p>
       </header>
       <Switch>
-      <Route exact path="/">
+      <Route path="/">
         <NavBar />
-      </Route>
       <Route exact path="/enroll">
           <Enroll />
       </Route>
@@ -31,7 +25,8 @@ function MainApp() {
         <Login nowuser={nowuser} setnowuser={setnowuser}/>
       </Route>
       <Route exact path="/checking">
-        <Checking />
+        <Checking nowuser={nowuser} />
+      </Route>
       </Route>
     </Switch>
     </div>

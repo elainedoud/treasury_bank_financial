@@ -16,6 +16,7 @@ function Login({nowuser, setnowuser, ...props}){
           if (res.ok) {
             res.json().then(user => {
               setUser(user)
+              setnowuser(user)
               setLoggedIn(true)
             }
         )} else {
@@ -25,12 +26,8 @@ function Login({nowuser, setnowuser, ...props}){
         })
         }, []);
 
-        function handleUser(e){
-          e.preventDefault()
-          setnowuser(user)
-        return nowuser
-        }
-      
+
+        
     const handleLogin = async(e) => {
         e.preventDefault();
         const response = await fetch("/login", {
@@ -65,8 +62,7 @@ function Login({nowuser, setnowuser, ...props}){
         <div>
         <form onSubmit={(e) => {
           handleLogin(e);
-          handleUser(e, props);
-        }} nowuser={nowuser}>
+        }}>
             <p>Login:</p>
             <input 
             type="text"

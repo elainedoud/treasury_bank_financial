@@ -17,7 +17,7 @@ class AccountsController < ApplicationController
     end
 
     def account_user
-        user = User.find_by(params[:name])
+        user = User.find_by(params[:id])
     end
 
     #comments
