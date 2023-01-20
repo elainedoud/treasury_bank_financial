@@ -26,6 +26,8 @@ function Login({nowuser, setnowuser, ...props}){
         })
         }, []);
 
+        console.log(nowuser)
+
 
         
     const handleLogin = async(e) => {

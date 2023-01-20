@@ -10,6 +10,11 @@ class AccountsController < ApplicationController
         render json: account
     end
 
+    def index
+        accounts = Account.all
+        render json: accounts
+    end
+
     private
 
     def account_params

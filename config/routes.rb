@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  get "/account/user/id", to: "accounts#show"
+  get "/account", to: "accounts#index"
+  get "/account/users/id", to: "accounts#show"
+
+  #Try "/account/user_id" if the other one does not work
   
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
