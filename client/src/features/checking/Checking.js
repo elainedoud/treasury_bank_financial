@@ -2,9 +2,15 @@ import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchAccounts} from './checkingSlice'
 
-function Checking ({nowuser}) {
+function Checking ({nowuser, setnowuser}) {
 
+    useEffect(() =>{
+        setnowuser(nowuser)
+    })
+
+    console.log(nowuser)
     const ouruser = nowuser
+    console.log(ouruser)
     
     
     const dispatch = useDispatch()
@@ -15,19 +21,36 @@ function Checking ({nowuser}) {
     }, [dispatch])
 
     const accounts = useSelector(state => state.accounts.accounts)
-    console.log(accounts)
+
+    const users = accounts.map(account => account.clients)
+    console.log(users)
+  
+    /*const filteredAccount = the_users.find(user => user.name === ouruser.name)*/
+
+    /*useEffect(()=>{
+        setSelectAccounts(
+            accounts.filter(account => account.includes(filteredAccount))
+        )
+    }, [filteredAccount, accounts])*/
+
+    const clients = accounts.map((account) => (account.clients))
+    console.log(clients)
+    const more_clients = clients.map((client) => client.id)
+    console.log(more_clients)
+
 
     useEffect(() => {
         setSelectAccounts(
             accounts.filter(account => account.id === ouruser.id)
         )
-    }, [ouruser])
+    }, [ouruser, accounts])
 
+    /*accounts.filter(account => account.id === ouruser.id)*/
 
-     
+    console.log(accounts)
     console.log(selectAccounts)
-    console.log(ouruser)
-    console.log(ouruser.id)
+    
+    
  
     return (
         <div>

@@ -26,7 +26,7 @@ function MainApp() {
         <Login nowuser={nowuser} setnowuser={setnowuser}/>
       </Route>
       <Route exact path="/checking">
-        <Checking nowuser={nowuser} />
+        <Checking nowuser={nowuser} setnowuser={setnowuser}/>
       </Route>
       </Route>
     </Switch>

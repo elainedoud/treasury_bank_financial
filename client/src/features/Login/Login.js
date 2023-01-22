@@ -8,6 +8,7 @@ function Login({nowuser, setnowuser, ...props}){
     const [password, setPassword] = useState("");
     const [errors, setError] = useState([])
     const [loggedIn, setLoggedIn] = useState(true)
+    const [formSubmitted, setFormSubmitted] = useState(false)
     
 
       useEffect(() => {
@@ -17,6 +18,7 @@ function Login({nowuser, setnowuser, ...props}){
             res.json().then(user => {
               setUser(user)
               setnowuser(user)
+              console.log("The user is set")
               setLoggedIn(true)
             }
         )} else {
@@ -27,9 +29,7 @@ function Login({nowuser, setnowuser, ...props}){
         }, []);
 
         console.log(nowuser)
-
-
-        
+ 
     const handleLogin = async(e) => {
         e.preventDefault();
         const response = await fetch("/login", {
@@ -46,7 +46,27 @@ function Login({nowuser, setnowuser, ...props}){
                 } else if (data.errors){
                     setError(errors)
                 }
+            setFormSubmitted(true);
     }
+
+    useEffect(() => {
+      if (formSubmitted) {
+          fetch("/me")
+          .then(res => {
+            if (res.ok) {
+              res.json().then(user => {
+                setUser(user)
+                setnowuser(user)
+                console.log("The user is set")
+                setLoggedIn(true)
+              }
+          )} else {
+              setUser({});
+              setLoggedIn(false);
+            }
+          });
+        }
+      },[formSubmitted]);
 
     const handleChangeUsername = e => setName(e.target.value)
     const handleChangePassword = e => setPassword(e.target.value)
