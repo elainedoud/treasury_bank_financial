@@ -9,6 +9,9 @@ import {Route, Switch} from 'react-router-dom'
 function MainApp() {
 
   const [nowuser, setnowuser] = useState("") 
+  const [user, setUser] = useState({})
+  const [newname, setNewname] = useState("")
+  const [signedup, setSignedup] = useState(false)
   
 
   return (
@@ -20,13 +23,15 @@ function MainApp() {
       <Route path="/">
         <NavBar />
       <Route exact path="/enroll">
-          <Enroll />
+          <Enroll user={user} setUser={setUser} newname={newname} setNewname={setNewname} 
+          signedup={signedup} setSignedup={setSignedup}/>
       </Route>
       <Route exact path="/login">
-        <Login nowuser={nowuser} setnowuser={setnowuser}/>
+        <Login user={user} setUser={setUser} nowuser={nowuser} setnowuser={setnowuser}/>
       </Route>
       <Route exact path="/checking">
-        <Checking nowuser={nowuser} setnowuser={setnowuser}/>
+        <Checking nowuser={nowuser} setnowuser={setnowuser} 
+        newname={newname} setNewname={setNewname} signedup={signedup} setSignedup={setSignedup}/>
       </Route>
       </Route>
     </Switch>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   get "/account", to: "accounts#index"
+  post "/enroll", to: "users#create"
 
   #Try "/account/user_id" if the other one does not work
   

@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {allLoginData} from './loginSlice';
 
-function Login({nowuser, setnowuser, ...props}){ 
+function Login({user, setUser, nowuser, setnowuser, ...props}){ 
 
-    const [user, setUser] = useState({})
+    
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setError] = useState([])
