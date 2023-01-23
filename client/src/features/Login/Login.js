@@ -18,7 +18,6 @@ function Login({nowuser, setnowuser, ...props}){
             res.json().then(user => {
               setUser(user)
               setnowuser(user)
-              console.log("The user is set")
               setLoggedIn(true)
             }
         )} else {
@@ -28,7 +27,6 @@ function Login({nowuser, setnowuser, ...props}){
         })
         }, []);
 
-        console.log(nowuser)
  
     const handleLogin = async(e) => {
         e.preventDefault();
@@ -57,7 +55,6 @@ function Login({nowuser, setnowuser, ...props}){
               res.json().then(user => {
                 setUser(user)
                 setnowuser(user)
-                console.log("The user is set")
                 setLoggedIn(true)
               }
           )} else {

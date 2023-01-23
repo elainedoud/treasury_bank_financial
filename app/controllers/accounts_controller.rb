@@ -5,11 +5,6 @@ class AccountsController < ApplicationController
         render json: account, status: :created
     end
 
-    def show
-        account = Account.find_by(user: account_user)
-        render json: account
-    end
-
     def index
         accounts = Account.all
         render json: accounts
@@ -20,13 +15,5 @@ class AccountsController < ApplicationController
     def account_params
         params.permit(:name)
     end
-
-    def account_user
-        user = User.find_by(params[:id])
-    end
-
-    #comments
-    #account_user.
-    #.where(name: params[:checking])
 
 end
