@@ -31,13 +31,24 @@ function Checking ({nowuser, setnowuser, newname, signedup}) {
             <div>{signedup ? <p>Welcome {newname}! Your starting balance is $0.</p> :null}</div>
             {selectAccounts.map((account) => (
                     <div key={account.id}>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Transaction</th>
+                                    <th>Dollar Amount</th>
+                                </tr>
+                            </thead>
                         {account.transactions.map((transaction) => (
-                            <ul key={transaction.id}>
-                                <p>{transaction.date}</p>
-                                <p>{transaction.description}</p>
-                                <p>{transaction.dollar_amount}</p>
-                            </ul> 
+                            <tbody>
+                            <tr key={transaction.id}>
+                                <td>{transaction.date}</td>
+                                <td>{transaction.description}</td>
+                                <td>{transaction.dollar_amount}</td>
+                            </tr> 
+                            </tbody>
                         ))}
+                        </table>
                     </div>
             ))}
         </div>

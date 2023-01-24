@@ -82,7 +82,7 @@ function Login({user, setUser, nowuser, setnowuser, ...props}){
         <form onSubmit={(e) => {
           handleLogin(e);
         }}>
-            <p>Login:</p>
+            <label>Login:</label>
             <input 
             type="text"
             onChange = {handleChangeUsername}

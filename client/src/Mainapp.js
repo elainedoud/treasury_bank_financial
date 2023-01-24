@@ -16,8 +16,8 @@ function MainApp() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Treasury Bank Financial</p>
+      <header>
+        <h1 class="header text-warning">Treasury Bank Financial</h1>
       </header>
       <Switch>
       <Route path="/">
@@ -38,5 +38,7 @@ function MainApp() {
     </div>
   );
 }
+
+/*className="App-header"*/
 
 export default MainApp;
