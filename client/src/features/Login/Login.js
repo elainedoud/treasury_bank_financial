@@ -78,8 +78,8 @@ function Login({user, setUser, nowuser, setnowuser, ...props}){
       }
 
     return (
-        <div>
-        <form onSubmit={(e) => {
+        <div class="container ps-4 pe-4">
+        <form class="pt-3" onSubmit={(e) => {
           handleLogin(e);
         }}>
             <label>Login:</label>
@@ -92,14 +92,17 @@ function Login({user, setUser, nowuser, setnowuser, ...props}){
             user={user}
             />
             <input 
-            type="text" 
+            type="password" 
             onChange = {handleChangePassword}
             value = {password}
             placeholder = 'password' 
-            className="login"/>
-        <button type="submit" className="logbutton">Login</button>
-        <button onClick={handleLogout} className="logbutton">Logout</button>
+            className="login"
+            class="form control"/>
+        <button type="submit" className="logbutton" class="bg-warning">Login</button>
+        <button onClick={handleLogout} className="logbutton" class="bg-warning">Logout</button>
+            <div class="container pt-3"> 
         { loggedIn ? <p>You are logged in </p> : <p>You are logged out</p> } 
+            </div>
         </form>
             
         </div>
