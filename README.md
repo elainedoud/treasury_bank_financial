@@ -2,7 +2,7 @@
 
 ## Description
 
-My project is inspired by banking websites.  I have created multiple personas with names, email addresses, and checking account transactions.  Their checking accounts can be viewed by logging into the website with their information.  This website incorporates authorizations and sessions which is demonstrated by the user being able to login (and out) of the website.  A page of the website also encourages new users to enter personal information and become new members of the bank. This project has a React frontend with Rails as the backend.
+My project is inspired by banking websites.  It was built using React, Redux, Ruby on the Rails, Postgres, CSS, and Bootstraps.  I created multiple personas with names, email addresses, and checking account transactions.  Their checking accounts can be viewed by logging into the website with their information.  This website incorporates authorizations and sessions which is demonstrated by the user being able to login (and out) of the website.  A page of the website also encourages new users to enter personal information and become new members of the bank. This project has a React frontend with Rails as the backend.
 
 ## To View
 
