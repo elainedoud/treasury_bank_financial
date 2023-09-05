@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import NavBar from './NavBar';
 import Enroll from './Enroll';
-import Login from './features/login/Login';
-import Checking from './features/checking/Checking';
+import Login from './app/features/login/Login';
+import Checking from './app/features/checking/Checking';
 import './App.css';
 import {Route, Switch} from 'react-router-dom'
 
