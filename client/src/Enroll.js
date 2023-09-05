@@ -34,8 +34,9 @@ function Enroll ({user, setUser, newname, setNewname, signedup, setSignedup}){
                 <h5 class="header pt-3 text-start ps-3">Open an account with Treasury Bank Financial: </h5>
             <div class="container">
                 <form onSubmit={handleSubmit}>
-                    <div class="form-group text-start">
+                    <div class="form-group text-start enroll_padding">
                         <label htmlFor="full name" class="form label">Full Name: </label>
+                        <div>
                         <input 
                         type="text"
                         id="full name"
@@ -43,9 +44,11 @@ function Enroll ({user, setUser, newname, setNewname, signedup, setSignedup}){
                         onChange={(e) => setNewname(e.target.value)}
                         placeholder="First and Last Name"
                         class="form cotrol"/>
+                        </div>
                     </div>
-                    <div class="form-group text-start">
+                    <div class="form-group text-start enroll_padding">
                         <label htmlFor="email address" class="form label">Email Address: </label>
+                        <div>
                         <input 
                         type="text"
                         id="email"
@@ -55,8 +58,10 @@ function Enroll ({user, setUser, newname, setNewname, signedup, setSignedup}){
                         class="form cotrol"
                     />
                     </div>
-                    <div class="form-group text-start">
+                    </div>
+                    <div class="form-group text-start enroll_padding">
                         <label htmlFor="password" class="form label">Password: </label>
+                        <div>
                         <input 
                         type="password"
                         id="password"
@@ -64,6 +69,9 @@ function Enroll ({user, setUser, newname, setNewname, signedup, setSignedup}){
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="password"
                         class="form cotrol"/>
+                        </div>
+                    </div>
+                    <div class="button_padding">
                     <button type="submit" class="bg-warning">Enroll</button>
                     </div>
                 </form>

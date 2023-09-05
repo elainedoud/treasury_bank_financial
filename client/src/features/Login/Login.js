@@ -82,15 +82,19 @@ function Login({user, setUser, nowuser, setnowuser, ...props}){
         <form class="pt-3" onSubmit={(e) => {
           handleLogin(e);
         }}>
+          <div class="login_padding">
             <label>Login:</label>
-            <input 
+          </div>
+            <div class="login_padding">
+              <input 
             type="text"
             onChange = {handleChangeUsername}
             value = {name}
             placeholder = 'name' 
             className="login"
-            user={user}
-            />
+            user={user}/>
+            </div>
+            <div class="login_padding">
             <input 
             type="password" 
             onChange = {handleChangePassword}
@@ -98,11 +102,16 @@ function Login({user, setUser, nowuser, setnowuser, ...props}){
             placeholder = 'password' 
             className="login"
             class="form control"/>
+            </div>
+        <div class="login_padding">
         <button type="submit" className="logbutton" class="bg-warning">Login</button>
+        </div>
+        <div class="login_padding">
         <button onClick={handleLogout} className="logbutton" class="bg-warning">Logout</button>
             <div class="container pt-3"> 
         { loggedIn ? <p>You are logged in </p> : <p>You are logged out</p> } 
             </div>
+        </div>
         </form>
             
         </div>
